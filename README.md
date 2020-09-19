@@ -1,14 +1,33 @@
-# Welcome to your CDK TypeScript project!
+# CDK AppSync GraphQL API
 
-This is a blank project for TypeScript development with CDK.
+This CDK stack deploys a real-time GraphQL API built with AWS AppSync, Amazon DynamoDB, and AWS Lambda.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Getting started
 
-## Useful commands
+To deploy this project, follow these steps.
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+1. Clone the project
+
+```sh
+git clone https://github.com/dabit3/cdk-graphql-backend.git 
+```
+
+2. Change into the directory and install dependencies
+
+```sh
+cd cdk-graphql-backend
+
+npm install
+```
+
+3. Run the build
+
+```sh
+npm run build
+```
+
+4. Deploy the stack
+
+```sh
+cdk deploy
+```
