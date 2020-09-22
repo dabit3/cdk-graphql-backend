@@ -14,7 +14,7 @@ export class AppsyncCdkAppStack extends cdk.Stack {
         defaultAuthorization: {
           authorizationType: appsync.AuthorizationType.API_KEY,
           apiKeyConfig: {
-            expires: cdk.Expiration.atTimestamp(1631579248000)
+            expires: cdk.Expiration.after(cdk.Duration.days(365))
           }
         },
       },
@@ -24,6 +24,11 @@ export class AppsyncCdkAppStack extends cdk.Stack {
     // print out the AppSync GraphQL endpoint to the terminal
     new cdk.CfnOutput(this, "GraphQLAPIURL", {
      value: api.graphqlUrl
+    });
+
+    // print out the AppSync API Key to the terminal
+    new cdk.CfnOutput(this, "GraphQLAPIKey", {
+      value: api.apiKey || ''
     });
 
     const notesLambda = new lambda.Function(this, 'AppSyncNotesHandler', {
