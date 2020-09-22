@@ -40,6 +40,7 @@ export class AppsyncCdkAppStack extends cdk.Stack {
       runtime: lambda.Runtime.NODEJS_12_X,
       handler: 'appsync-ds-main.handler',
       code: lambda.Code.fromAsset('lambda-fns'),
+      memorySize: 1024
     });
     
     // Set the new Lambda function as a data source for the AppSync API
