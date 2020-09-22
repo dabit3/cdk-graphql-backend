@@ -26,3 +26,12 @@ type Mutation {
   updateNote(note: UpdateNoteInput!): Note
   deleteNote(noteId: String!): String
 }
+
+type Subscription {
+	onCreateNote: Note
+		@aws_subscribe(mutations: ["createNote"])
+  onDeleteNote: Note
+    @aws_subscribe(mutations: ["deleteNote"])
+  onUpdateNote: Note
+    @aws_subscribe(mutations: ["updateNote"])
+}

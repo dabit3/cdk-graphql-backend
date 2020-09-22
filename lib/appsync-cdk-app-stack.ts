@@ -31,6 +31,11 @@ export class AppsyncCdkAppStack extends cdk.Stack {
       value: api.apiKey || ''
     });
 
+    // print out the stack region
+    new cdk.CfnOutput(this, "Stack Region", {
+      value: this.region
+    });
+
     const notesLambda = new lambda.Function(this, 'AppSyncNotesHandler', {
       runtime: lambda.Runtime.NODEJS_12_X,
       handler: 'appsync-ds-main.handler',
