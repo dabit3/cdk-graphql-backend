@@ -3,8 +3,19 @@ import deleteNote from './deleteNote';
 import getNoteById from './getNoteById';
 import listNotes from './listNotes';
 import updateNote from './updateNote';
+import Note = require('./Note');
 
-exports.handler = async (event:any) => {
+type AppSyncEvent = {
+   info: {
+     fieldName: string
+  },
+   arguments: {
+     noteId: string,
+     note: Note
+  }
+}
+
+exports.handler = async (event:AppSyncEvent) => {
     switch (event.info.fieldName) {
         case "getNoteById":
             return await getNoteById(event.arguments.noteId);
