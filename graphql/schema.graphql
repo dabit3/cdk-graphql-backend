@@ -30,7 +30,7 @@ type Mutation {
 type Subscription {
 	onCreateNote: Note
 		@aws_subscribe(mutations: ["createNote"])
-  onDeleteNote: Note
+  onDeleteNote: String
     @aws_subscribe(mutations: ["deleteNote"])
   onUpdateNote: Note
     @aws_subscribe(mutations: ["updateNote"])
