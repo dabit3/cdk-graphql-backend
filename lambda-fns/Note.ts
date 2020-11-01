@@ -1,7 +1,7 @@
-interface Note {
+type Note = {
   id: string;
   name: string;
   completed: boolean;
 }
 
-export = Note
+export default Note

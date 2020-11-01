@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
 const docClient = new AWS.DynamoDB.DocumentClient();
 
-interface Params {
+type Params = {
   TableName: string | undefined,
   Key: string | {},
   ExpressionAttributeValues: any,

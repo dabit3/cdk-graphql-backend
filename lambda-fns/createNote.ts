@@ -1,6 +1,6 @@
 const AWS = require('aws-sdk');
 const docClient = new AWS.DynamoDB.DocumentClient();
-import Note = require('./Note');
+import Note from './Note'
 
 async function createNote(note: Note) {
     const params = {

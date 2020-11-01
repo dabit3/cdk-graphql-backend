@@ -3,7 +3,7 @@ import deleteNote from './deleteNote';
 import getNoteById from './getNoteById';
 import listNotes from './listNotes';
 import updateNote from './updateNote';
-import Note = require('./Note');
+import Note from './Note';
 
 type AppSyncEvent = {
    info: {
